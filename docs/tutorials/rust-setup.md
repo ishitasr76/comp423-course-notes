@@ -5,9 +5,10 @@
 
 ## **Prerequisites**
 * Docker: have it downloaded on your device
-* Visual Studio Code (VS Code):
-* Git: 
-* VS Code Remove - Containers Extension
+* Visual Studio Code (VS Code)
+* Git installed on your computer
+* GitHub account that is set up
+* Basic git commands
 * Introduction knowledge of the basics of Rust programming language
 
 ## **Project Setup: Creating the Repository**
@@ -124,10 +125,12 @@ fn main() {
 ```bash
 cargo build
 ```
+This will create the executable file but will not run the file till we execute the next command. This is similar to the gcc command because it will produce an executable file. We must then run this executable file to get the output for the file. 
 3. Run the program
 ```bash
 cargo run
 ```
+This command will compile and run the program with one command to make the process faster. 
 
 ## **You are all done!**
 You are successfully created your first rust program :) 
