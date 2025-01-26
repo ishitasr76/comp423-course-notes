@@ -49,7 +49,10 @@ git commit -m "Initial commit with README"
 git remote add origin https://github.com/<your-username>/rust-tutorial.git
 ```
 Make sure to replace `<your-username>` with your GitHub username.
-2. Check what your repository's default branch is using `git branch`. You should expect it to indicate that your default branch is `main`.
+2. Check what your repository's default branch is using `git branch`. You should expect it to indicate that your default branch is `main`. If your default branch is not `main`, rename it to `main`:
+```bash
+git branch -M main
+```
 3. Push your local commits to the GitHub repository. 
 ```bash
 git push --set-upstream origin main
@@ -64,36 +67,21 @@ All the changes you have made so far should now be pushed up to remote repositor
 3. Create a `.devcontainer` directory in the root of your project. Add the `devcontainer.json` file to the created directory. The configuration of the file should be: 
 `.devcontainer/devcontainer.json`
 4. In this file, add the following code
-```bash
+```json
 {
-  "name": "COMP423 Course Notes",
+  "name": "Rust Tutorial",
   "image": "mcr.microsoft.com/devcontainers/rust:latest",
   "customizations": {
     "vscode": {
       "settings": {},
       "extensions": ["rust-lang.rust-analyzer"]
     }
-  },
-  "postCreateCommand": "cargo build"
-}
+  }
 
 ```
 We are adding the `rust-analyzer` extension via VS Code automatically whenever the container is created. It provides us with a variety of different features such as code completion, error detection, etc.
-### Step 2: Add `Cargo.toml` Rust Dependency Configuration
-1.  In the root directory, create a file called `Cargo.toml`
-2. Add the following lines of code to the file to specify the dependencies
-```rust
-[package]
-name = "rust-devcontainer"
-version = "0.1.0"
-edition = "2021"
-
-[dependencies]
-serde = "1.0"
-tokio = "1.0"
-```
-
-3. Verify the Rust installation by running the following code in the terminal.
+### Step 2: Verify version of Rust
+1. Verify the Rust installation by running the following code in the terminal.
 ```bash
 rustc --version
 ```
@@ -121,19 +109,39 @@ fn main() {
     println!("Hello COMP423");
 }
 ```
-2. Compile the program
+2. Change into the `hello_comp423` directory.
+```bash
+cd hello_comp423
+```
+3. Compile the program
 ```bash
 cargo build
 ```
 This will create the executable file but will not run the file till we execute the next command. This is similar to the gcc command because it will produce an executable file. We must then run this executable file to get the output for the file. 
-3. Run the program
+4. Run the executable using:
+```bash
+./target/debug/hello_world
+```
+### Alternative way: avoiding Build
+1. Run the program
 ```bash
 cargo run
 ```
-This command will compile and run the program with one command to make the process faster. 
+This command will compile (if needed) and run the program with one command to make the process faster. If `cargo build` is used, we have already completed the compile step, so this comman will just run the program files.
 
+## Publish your Project on GitHub
+When you are done with writing code on your project and are ready:
+```bash
+git add .
+git commit -m "Initial Rust dev container setup"
+```
+Push this code upto github when the remote is ready:
+```bash
+git remote add origin <repo-url>
+git push -u origin main
+```
 ## **You are all done!**
-You are successfully created your first rust program :) 
+You are successfully created your first rust program. If you are followed this tutorial you have set up a proper Rust program using Dev Container on VS Code. This program should successfully output "Hello COMP423". The tutorial models professional workflows in Rust Development and dives into the basics of working with and building projets using Rust. 
 
 
 
