@@ -83,17 +83,15 @@ git push --set-upstream origin main
 ```
 !!! note
     We are adding the `rust-analyzer` extension via VS Code automatically whenever the container is created. It provides us with a variety of different features such as code completion, error detection, etc.
-### Step 2: Verify version of Rust
-1. Verify the Rust installation by running the following code in the terminal.
+### Step 2: Reopen the project in VS Code Dev Container
+Open the project in the container by pressing `Ctrl+Shift+P` and typing in "Dev Containers: Reopen in Container"
+
+### Step 3: Verify version of Rust
+1. Verify the Rust installation by running the following code in the terminal. Open a new terminal.
 ```bash
 rustc --version
 ```
 Make sure the recent version is being run to ensure the setup was successful. 
-
-### Step 3: Reopen the project in VS Code Dev Container
-Open the project in the container by pressing `Ctrl+Shift+P` and typing in "Dev Containers: Reopen in Container"
-
-After this, open up a new terminal in VS Code and run `rustc --version`
 
 ## **Making the Actual Project**
 ### Step 1: Create the Rust Project
@@ -124,7 +122,7 @@ cargo build
     This will create the executable file but will not run the file till we execute the next command. This is similar to the `gcc` command because it will produce an executable file. We must then run this executable file to get the output for the file. 
 4. Run the executable using:
 ```bash
-./target/debug/hello_world
+./target/debug/hello_comp423
 ```
 ### Alternative way: avoiding Build
 1. Run the program
