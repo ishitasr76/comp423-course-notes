@@ -4,12 +4,12 @@
 * Reviewer: [Suhas Puttoju](https://github.com/suhasp3)
 
 ## **Prerequisites**
-* Docker: have it downloaded on your device
-* Visual Studio Code (VS Code)
-* Git installed on your computer
-* GitHub account that is set up
+* **Docker**: have it downloaded on your device
+* **Visual Studio Code** (VS Code)
+* **Git** installed on your computer
+* **GitHub** account that is set up
 * Basic git commands
-* Introduction knowledge of the basics of Rust programming language
+* Introduction knowledge of the basics of **Rust** programming language
 
 ## **Project Setup: Creating the Repository**
 ### Step 1: Setting up a Dev Container Project
@@ -39,8 +39,7 @@ git commit -m "Initial commit with README"
     * Repository Name: `rust-tutorial`
     * Description: "Simple Rust tutorial that outputs Hello COMP423!"
     * Visibility: Public
-
-3. Do not initialize the repository with a README, .gitignore, or license. You already did that using the terminal in the previous step. 
+> **Note:** Do not initialize the repository with a README, .gitignore, or license. You already did that using the terminal in the previous step. 
 4. Click **Create Repository**.
 
 ### Step 3: Link the local repository to the GitHub (remote repository)
@@ -48,7 +47,9 @@ git commit -m "Initial commit with README"
 ```bash
 git remote add origin https://github.com/<your-username>/rust-tutorial.git
 ```
-Make sure to replace `<your-username>` with your GitHub username.
+!!! warning "Caution" 
+    Make sure to replace `<your-username>` with your GitHub username.
+
 2. Check what your repository's default branch is using `git branch`. You should expect it to indicate that your default branch is `main`. If your default branch is not `main`, rename it to `main`:
 ```bash
 git branch -M main
@@ -57,7 +58,8 @@ git branch -M main
 ```bash
 git push --set-upstream origin main
 ```
-All the changes you have made so far should now be pushed up to remote repository and you can see this commit on GitHub as well. 
+!!! note
+    All the changes you have made so far should now be pushed up to remote repository and you can see this commit on GitHub as well. 
 
 ## **Set up the Development Environemnt**
 ### Step 1: Add Development Container Configuration
@@ -79,7 +81,8 @@ All the changes you have made so far should now be pushed up to remote repositor
   }
 
 ```
-We are adding the `rust-analyzer` extension via VS Code automatically whenever the container is created. It provides us with a variety of different features such as code completion, error detection, etc.
+!!! note
+    We are adding the `rust-analyzer` extension via VS Code automatically whenever the container is created. It provides us with a variety of different features such as code completion, error detection, etc.
 ### Step 2: Verify version of Rust
 1. Verify the Rust installation by running the following code in the terminal.
 ```bash
@@ -99,7 +102,7 @@ After this, open up a new terminal in VS Code and run `rustc --version`
 cargo new hello_comp423 --vcs none
 cd hello_comp423
 ```
-This will create a new Rust Binary Project without making/initializing a git repository
+> **Note:** `---vcs none` will create a new Rust Binary Project without making/initializing a git repository
 
 ### Step 2: Writing and running the program
 1. Modify the `main.rs` file
@@ -117,7 +120,8 @@ cd hello_comp423
 ```bash
 cargo build
 ```
-This will create the executable file but will not run the file till we execute the next command. This is similar to the gcc command because it will produce an executable file. We must then run this executable file to get the output for the file. 
+!!! note
+    This will create the executable file but will not run the file till we execute the next command. This is similar to the `gcc` command because it will produce an executable file. We must then run this executable file to get the output for the file. 
 4. Run the executable using:
 ```bash
 ./target/debug/hello_world
@@ -127,7 +131,8 @@ This will create the executable file but will not run the file till we execute t
 ```bash
 cargo run
 ```
-This command will compile (if needed) and run the program with one command to make the process faster. If `cargo build` is used, we have already completed the compile step, so this comman will just run the program files.
+!!! note
+    This command will compile (if needed) and run the program with one command to make the process faster. If `cargo build` is used, we have already completed the compile step, so this comman will just run the program files.
 
 ## Publish your Project on GitHub
 When you are done with writing code on your project and are ready:
