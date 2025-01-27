@@ -6,13 +6,12 @@
 ## **Prerequisites**
 * **Docker**: have it downloaded on your device
 * **Visual Studio Code** (VS Code)
-* **Git** installed on your computer
+* **Git** installed on your computer as well as basic git command knowledge
 * **GitHub** account that is set up
-* Basic git commands
-* Introduction knowledge of the basics of **Rust** programming language
+
 
 ## **Project Setup: Creating the Repository**
-### Step 1: Setting up a Dev Container Project
+### Step 1: Creating Local Repository 
 **Create a new project Directory**
 
 Open a terminal or the command prompt to run the commands. In this section we will be creating a directory and initializing it in the git repo. We will then create a README file for our project.
@@ -43,6 +42,7 @@ git commit -m "Initial commit with README"
 4. Click **Create Repository**.
 
 ### Step 3: Link the local repository to the GitHub (remote repository)
+
 1. Add the GitHub repository as a remote
 ```bash
 git remote add origin https://github.com/<your-username>/rust-tutorial.git
@@ -50,10 +50,13 @@ git remote add origin https://github.com/<your-username>/rust-tutorial.git
 !!! warning "Caution" 
     Make sure to replace `<your-username>` with your GitHub username.
 
-2. Check what your repository's default branch is using `git branch`. You should expect it to indicate that your default branch is `main`. If your default branch is not `main`, rename it to `main`:
-```bash
-git branch -M main
-```
+2. Check what your repository's default branch is using `git branch`. You should expect it to indicate that your default branch is `main`.
+!!! note
+    If your default branch is not `main`, rename it to `main`:
+    ```bash
+    git branch -M main
+    ```
+ 
 3. Push your local commits to the GitHub repository. 
 ```bash
 git push --set-upstream origin main
@@ -83,7 +86,15 @@ git push --set-upstream origin main
 
 ```
 !!! note
+    `name` is the name of the dev container
+
+    `image` is the Docker image to use and in this case its the latest version of a Go envrionment
+    
+    `customizations` adds useful configurations to VS Code, 
+
     We are adding the `rust-analyzer` extension via VS Code automatically whenever the container is created. It provides us with a variety of different features such as code completion, error detection, etc.
+
+
 ### Step 2: Reopen the project in VS Code Dev Container
 Open the project in the container by pressing `Ctrl+Shift+P` and typing in "Dev Containers: Reopen in Container"
 
