@@ -79,6 +79,7 @@ git push --set-upstream origin main
       "extensions": ["rust-lang.rust-analyzer"]
     }
   }
+}
 
 ```
 !!! note
