@@ -13,3 +13,6 @@ markdown_extensions:
   - admonition
   - pymdownx.details
   - pymdownx.superfences
+  - content.code.copy
+  - content.code.select
+  - content.code.annotatevscode
